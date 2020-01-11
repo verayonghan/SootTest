@@ -1,0 +1,20 @@
+digraph "call-graph" {
+    "<testers.CallGraphs: void main(java.lang.String[])>"
+    "<testers.CallGraphs: void doStuff(int)>"
+    "<testers.CallGraphs: void main(java.lang.String[])>"->"<testers.CallGraphs: void doStuff(int)>";
+    "<testers.A: void <init>()>"
+    "<testers.CallGraphs: void doStuff(int)>"->"<testers.A: void <init>()>";
+    "<testers.A: void foo()>"
+    "<testers.CallGraphs: void doStuff(int)>"->"<testers.A: void foo()>";
+    "<testers.CallGraphs2: void <init>()>"
+    "<testers.CallGraphs: void doStuff(int)>"->"<testers.CallGraphs2: void <init>()>";
+    "<testers.CallGraphs2: void foo2()>"
+    "<testers.CallGraphs: void doStuff(int)>"->"<testers.CallGraphs2: void foo2()>";
+    "<java.lang.Object: void <init>()>"
+    "<testers.A: void <init>()>"->"<java.lang.Object: void <init>()>";
+    "<testers.A: void bar()>"
+    "<testers.A: void foo()>"->"<testers.A: void bar()>";
+    "<testers.CallGraphs2: void <init>()>"->"<java.lang.Object: void <init>()>";
+    "<testers.CallGraphs2: void bar2()>"
+    "<testers.CallGraphs2: void foo2()>"->"<testers.CallGraphs2: void bar2()>";
+}
